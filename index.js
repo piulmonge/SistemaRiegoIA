@@ -32,7 +32,7 @@ miSerial.on('data', function(data) {
         if (data[i] == 99) {
           Sensor1 = Sensor1Tmp;
           Estado = 0;
-          var dataSensor1[contador1]== sensor1;
+          var dataSensor1[contador1]= sensor1;
           contador1++;
           if(c > 100){
             contador1=0;
@@ -47,7 +47,7 @@ miSerial.on('data', function(data) {
         if (data[i] == 101) {
           Sensor2 = Sensor2Tmp;
           Estado = 0;
-          var dataSensor2[c]== sensor2;
+          var dataSensor2[c]= sensor2;
           contador2++;
           if(contador2 > 100){
             contador2=0;
