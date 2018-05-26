@@ -6,7 +6,6 @@ var miSerial = new serialport("COM3", {
   autoOpen: true
 });
 
-  const Neurona = new brain.NeuralNetwork();
 
 var Sensor1 = 0;
 var contador1 = 0;
@@ -65,8 +64,10 @@ miSerial.on('data', function(data) {
 });
 
 
+  const Neurona = new brain.NeuralNetwork();
   Neurona.train([
     {input:{dataSensor1,dataSensor2}, output: {regar:1}},
+    {input:{dataSensor1,dataSensor2}, output: {regar:0}}
   ]);
 
   var Resultado = brain.likely(Neurona);
