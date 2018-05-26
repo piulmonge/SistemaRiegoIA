@@ -1,7 +1,8 @@
 var SerialPort = require('serialport');
-
-var port = new SerialPort('/dev/tty-usbserial1', {
-  baudRate:9600;
+//Cambiar el numero o nombre del puerto usb
+var miSerial = new serialport("COM3", {
+  baudRate: 9600,
+  autoOpen: true
 });
 
 
@@ -14,7 +15,7 @@ var Estado = 0;
 var Sensor2 = 0;
 var Sensor2Tmp = 0;
 
-port.on('data', function(data) {
+miSerial.on('data', function(data) {
   console.log("Valor 1 " + Sensor1 + " Valor 2 " + Sensor2);
   for (var i = 0; i < data.length; i++) {
     switch (Estado) {
